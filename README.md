@@ -1,3 +1,97 @@
+## Deployed Site
+The website is currently hosted on https://create-3d-demo.herokuapp.com/Home
+
+## Project Features Implemented and Associated Screenshots
+
+### Pages
+
+#### Home Page
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Page%20Screenshots/Homepage.png)
+
+#### Pricing Page
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Page%20Screenshots/Pricing1.png)
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Page%20Screenshots/Pricing2.png)
+
+#### Login tab
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Page%20Screenshots/Login.png)
+
+#### Register tab
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Page%20Screenshots/Register.png)
+
+#### Portal Page
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Page%20Screenshots/Portal.png)
+
+### Portal Components
+
+#### My Profile
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/MyProfile.png)
+
+#### Change Password
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/ChangePassword.png)
+
+#### Update Email Preferences
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/UpdateEmailPreferences.png)
+
+#### Update Contact Info
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/UpdateContactInfo.png)
+
+#### My Information
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/MyInformation.png)
+
+#### My Listings
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/MyListings.png)
+
+#### Add Listing
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/AddListing.png)
+
+#### My Subscription
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/MySubscription.png)
+
+#### My Traffic
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/MyTraffic.png)
+
+#### Paypal Checkout
+
+#### Modals
+![ScreenShot](https://github.com/sanguine-six-dev/create-3d-models/blob/master/client/src/assets/Component%20Screenshots/Modals.png)
+
+## How to run
+### Locally
+1.  navigate to create-3d-models/ and run npm start (back end/server)
+2.  navigate to create-3d-models/client/ and run npm start (front end)
+3.  navigate to create-3d-models/client/src/components/models and run npm start (React-360/map)
+### Heroku
+[Deploy_App_with_Heroku](https://github.com/sanguine-six-dev/create-3d-models/blob/master/documents/Deploying_Heroku_App.docx)
+
+## Team Members
+* Ashleigh Hillebrand - Product Manager
+* Ken Wilkinson - Scrum Master
+* David Meadows - Development Team
+* Matt Rabe - Development Team
+* Connor Wolfe - Development Team
+
+## API Credits
+This web application is built on the MERN stack and utilizes MongoDB, Express, React, React-Bootstrap, NodeJS, Axios, React-Router-Dom, Passport and PaypalButton. The web application was also based off of a MERN stack template (https://github.com/UFWebApps/MERN-Template) provided as a resource in class CEN3031 at the University of Florida.
+
+## Other Sources
+* Connor Wolfe
+   * Icons
+      * Premium icon: https://www.flaticon.com/free-icon/bookmark_1118300?term=premium&page=1&position=46
+      * Author: bqlqn
+      * Upload icon:  https://www.flaticon.com/free-icon/cloud-computing_512216?term=upload&page=1&position=13
+      * Author: Krill Kazachek
+      * User icon: https://www.flaticon.com/free-icon/user_121693?term=user&page=1&position=22
+      * Mail icon: https://www.flaticon.com/free-icon/black-back-closed-envelope-shape_37572?term=mail&page=1&position=36
+      * 360 icon: https://www.flaticon.com/free-icon/360-degrees_1530099?term=360%20image&page=1&position=3
+      * Author: Freepik
+   * Pricing page content divider 
+      * Divider experiments https://codepen.io/Oddgson/pen/VPrYbv
+      * Author: Milan
+   * Code Sources used:
+      * React bootstrap component documentation: https://react-bootstrap.github.io/components/
+
+
+# General Information about the template
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This project contains an example project board meant to showcase how one can be used. The issues posted to it are not real issues.
 
@@ -30,6 +124,8 @@ This app can be deployed directly to heroku since there is a script defined in p
 - #### `routes` - This holds all of our HTTP to URL path associations for each unique url
 - #### `tests` - This holds all of our server tests that we have defined
 - #### `server.js` - Defines npm behaviors and packages for the client
+#### `Procfile` - Used for declaring what commands are run by your app's container.
+#### `documents` - Contains any documents related to this project
 #### `package.json` - Defines npm behaviors like the scripts defined in the next section of the README
 #### `.gitignore` - Tells git which files to ignore
 #### `README` - This file!
@@ -49,11 +145,13 @@ Open [http://localhost:3000](http://localhost:3000) to view the client in the br
 Runs just the client app in development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view the client in the browser.
 
-
 ### `npm run-script server`
 
 Runs just the server in development mode.<br>
 
+### `npm run-script map`
+
+Runs just the react-360 map in development mode.<br>
 
 ### `npm run build`
 

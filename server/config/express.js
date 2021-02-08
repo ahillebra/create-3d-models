@@ -3,7 +3,7 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    exampleRouter = require('../routes/examples.server.routes');
+    userPortalRouter = require('../routes/userPortal.server.routes.js');
 
 module.exports.init = () => {
     /*
@@ -11,7 +11,9 @@ module.exports.init = () => {
         - reference README for db uri
     */
     mongoose.connect(process.env.DB_URI || require('./config').db.uri, {
-        useNewUrlParser: true
+        useNewUrlParser: true, useUnifiedTopology: true
+    }).catch(function (err) {
+        console.log(err);
     });
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
@@ -26,18 +28,18 @@ module.exports.init = () => {
     app.use(bodyParser.json());
 
     // add a router
-    app.use('/api/example', exampleRouter);
+    app.use('/api/userPortal', userPortalRouter);
 
     if (process.env.NODE_ENV === 'production') {
         // Serve any static files
         app.use(express.static(path.join(__dirname, '../../client/build')));
 
         // Handle React routing, return all requests to React app
-        app.get('*', function(req, res) {
+        app.get('*', function (req, res) {
             res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
         });
     }
 
     return app
-}
+};
 

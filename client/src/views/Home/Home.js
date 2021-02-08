@@ -1,25 +1,49 @@
-import React from 'react';
-import logo from '../../assets/logo.svg';
+import React, {Component} from 'react'
+import axios from 'axios'
 import './Home.css';
 
-function Home() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                </a>
-            </header>
-        </div>
-    );
+
+
+class Home extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+        listingsArray: []
+        }
+
+        this.fetchListings = this.fetchListings.bind(this);
+    }
+
+    fetchListings = event => {
+
+        event.preventDefault();
+
+        // This returns only the listings data from the individual records/accounts
+        axios.get('/api/userPortal/fetchListings')
+        .then(res => {
+            //This takes the data from the response, and concatenates it into one array
+            var listings = [];
+            var separateListingArrays = res.data.map(array => {
+                return array.listings.map(items => {
+                    listings.push(items);
+                })
+            })
+
+            console.log(listings);
+        })
+    }
+
+    render() {
+        return (
+            <div class="homeCSS" >
+                        
+                <iframe onLoad={this.fetchListings} class="MapCSS" src='http://localhost:8081/index.html'  />
+
+            </div>
+        );
+    }
 }
 
 export default Home;
